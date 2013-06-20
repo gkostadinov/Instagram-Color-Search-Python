@@ -1,0 +1,182 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "_fonts.scss";
+
+@mixin user-select($user-select: none) {
+    -webkit-touch-callout: $user-select;
+    -webkit-user-select: $user-select;
+    -khtml-user-select: $user-select;
+    -moz-user-select: $user-select;
+    -ms-user-select: $user-select;
+    user-select: $user-select;
+}
+
+body {
+    background: #edeeef;
+    font-family: "Open Sans", sans-serif;
+    @include user-select(none);
+    -webkit-font-smoothing: antialiased;
+
+    &.no-filter {
+        overflow: hidden;
+
+        #photos {
+            @include filter(blur(8px));
+        }
+
+        #toolbar {
+            width: 100%;
+            background-color: rgba(81, 127, 164, 0.8);
+
+            .container {
+                width: 500px;
+                height: auto;
+                margin: 100px auto;
+
+                h1 {
+                    font-size: 40px;
+                }
+
+                button {
+                    display: inline-block;
+                }
+    
+                .colors, .chosen-colors {
+                    width: 258px;
+                    
+                    p {
+                        font-size: 15px;
+                    }
+
+                    ul {
+                        li {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #photos {
+        img {
+            width: 120px;
+            height: 120px;
+            cursor: pointer;
+        
+            &.active {
+                width: 120*1.5px;
+                height: 120*1.5px;
+            }
+
+            &.inactive {
+                display: none;
+            }
+        }
+
+        .no-photos {
+            padding-top: 100px;
+
+            h1 {
+                font-family: 'Lily Script One', cursive;
+                color: #35536b;
+                font-size: 32px;
+                text-align: center;
+            }
+        }
+    }
+
+    #toolbar {
+        position: fixed;
+        z-index: 10;
+        width: 204px;
+        height: 100%;
+        right: 0;
+        background-color: #517fa4;
+
+        .container {
+            width: 184px;
+            height: 100%;
+            margin: 10px;
+            text-align: center;
+
+            h1 {
+                font-size: 25px;
+                color: white;
+                text-align: center;
+                margin-bottom: 30px;
+                font-family: 'Lily Script One', cursive;
+            }
+
+            button {
+                width: 150px;
+                height: 40px;
+                background-color: white;
+                border: none;
+                font-size: 20px;
+                font-weight: 100;
+                font-family: "Open Sans";
+                color: #406582;
+                cursor: pointer;
+                display: none;
+                margin-bottom: 10px;
+                    
+                &:hover {
+                    background-color: #edf2f6;
+                }
+                
+                &:active {
+                    background-color: #bfd1e0;
+                }
+
+                &.big {
+                    height: 65px;
+                }
+
+                &#add-more {
+                    display: none;
+
+                    &.loadingNewPhotos {
+                        disabled: disabled;
+                        color: #ccc;
+                    }
+                }
+            }
+    
+            .colors, .chosen-colors {
+                width: 178px;
+                background-color: #35536b;
+                margin: 0 auto;
+                margin-bottom: 20px;
+                padding: 5px 3px 3px 3px;
+
+                p {
+                    text-align: center;
+                    color: white;
+                    font-weight: 200;
+                    font-size: 13px;
+                    padding-bottom: 5px;
+                }
+
+                ul {
+                    li {
+                        width: 20px;
+                        height: 20px;
+                        margin: 0 0 2px 2px;
+                        float: left;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            .chosen-colors {
+                display: none;
+            }
+        }
+    }
+
+    .clear {
+        clear: both;
+    }
+}
