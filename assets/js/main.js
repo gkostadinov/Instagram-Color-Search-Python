@@ -1,5 +1,5 @@
 var Application = {
-    apiUrl: 'http://localhost/imagga-instagram/api/',
+    apiUrl: 'http://localhost:8080/api/',
 
     initialize: function() {
         Photos.initialize();

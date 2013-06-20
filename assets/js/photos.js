@@ -127,7 +127,7 @@ var Photos = {
         update = update || false;
 
         var that = this;
-        $.getJSON(Application.apiUrl + '?method=getInstagramPhotos' + ((update) ? '&params=update' : ''), function(data) {
+        $.getJSON(Application.apiUrl + 'photos/' + ((update) ? 'update' : 'get'), function(data) {
             // If new photos are being added, update the photo's array (event: photosUpdate)
             // If a completely new set of photos are fetched, change the photo's array (event: photosChange)
             that.trigger('photos' + ((!update) ? 'Change' : 'Update'), data);
@@ -152,7 +152,7 @@ var Photos = {
         filter = filter.join(',');
 
         var that = this;
-        $.getJSON(Application.apiUrl + '?method=getMatchingPhotos&params=' + filter, function(data) {
+        $.getJSON(Application.apiUrl + 'photos/match?params=' + filter, function(data) {
             // Trigger the photosFilter event and show those photos matching the results
             that.trigger('photosFilter', data);
         });
