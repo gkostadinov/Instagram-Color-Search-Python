@@ -110,7 +110,7 @@ class Application(object):
             })
             iterator += 4
 
-        import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
         try:
             matching_photos = self.imagga.rank_similar_color(color_combination, 4500)
             return matching_photos['rank_similarity']

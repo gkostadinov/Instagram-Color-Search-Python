@@ -23,6 +23,4 @@ Demo
 Python demo hopefully soon.
 
 
-PHP version demo:
-
-[http://avroraos.com/instagram-color-search/](http://avroraos.com/instagram-color-search/)
+[PHP version demo](http://avroraos.com/instagram-color-search/)
