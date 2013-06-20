@@ -145,7 +145,7 @@ def api(method='get', db=None):
         abort(404, 'No such method.')
 
     response.set_header('Content-Type', 'application/json')
-    return template(json.dumps(output))
+    return template('{{content}}', content=json.dumps(output))
 
 
 @route('/static/<filename:path>')
