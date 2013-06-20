@@ -145,7 +145,12 @@ def api(method='get', db=None):
         abort(404, 'No such method.')
 
     response.set_header('Content-Type', 'application/json')
-    return template('{{content}}', content=json.dumps(output))
+
+    if not len(output):
+        # A little hack so that bottle does not think there is no output
+        return template('{{content}}', content=json.dumps(output))
+    else:
+        return template(json.dumps(output))
 
 
 @route('/static/<filename:path>')
