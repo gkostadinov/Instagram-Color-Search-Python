@@ -7,7 +7,7 @@
         <meta name="description" content="Color based search for Instagram using Imagga's color API.">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="static/css/main.css">
     </head>
     <body class="no-filter">
         <div id="toolbar">
@@ -31,14 +31,14 @@
         </div>
         <div id="photos"></div>
 
-        <script src="assets/js/vendor/jquery.js"></script>
-        <script src="assets/js/vendor/underscore.js"></script>
-        <script src="assets/js/plugins/packery.js"></script>
+        <script src="static/js/vendor/jquery.js"></script>
+        <script src="static/js/vendor/underscore.js"></script>
+        <script src="static/js/plugins/packery.js"></script>
 
-        <script src="assets/js/photostorage.js"></script>
-        <script src="assets/js/events.js"></script>
-        <script src="assets/js/photos.js"></script>
-        <script src="assets/js/toolbar.js"></script>
-        <script src="assets/js/main.js"></script>
+        <script src="static/js/photostorage.js"></script>
+        <script src="static/js/events.js"></script>
+        <script src="static/js/photos.js"></script>
+        <script src="static/js/toolbar.js"></script>
+        <script src="static/js/main.js"></script>
     </body>
 </html>
